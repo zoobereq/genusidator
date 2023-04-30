@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A function that generates a noun-restricted taxonomy of hypernyms for input string"""
+"""A function that generates a noun-restricted taxonomy of hypernyms for the input string"""
 
 from nltk.corpus import wordnet as wn
 
