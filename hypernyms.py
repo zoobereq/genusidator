@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A function that generates a noun-restricted taxonomy of hypernyms for the input string"""
+"""A function generating a noun-restricted taxonomy of hypernyms for the input string"""
 
 from nltk.corpus import wordnet as wn
 
@@ -28,5 +28,3 @@ def taxonomy(word: str) -> list:
         return list(
             set([item for sublist in all_hypernyms for item in sublist])
         )  # flattens the list and removes duplicate categories
-    else:
-        return "There are no synsets available for this word."
