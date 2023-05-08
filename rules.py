@@ -70,17 +70,21 @@ masc_suffixes = [
     "ug",
     "und",
     "us",
-    "staat",
-    "markt",
-    "saft",
-    "wert",
-    "test",
-    "draht",
-    "bart",
-    "start",
-    "wart",
-    "hut",
+    "wart"
     "x",
+    # composite noun endings
+    "staat", 
+    "markt", 
+    "saft", 
+    "wert", 
+    "test", 
+    "draht", 
+    "bart", 
+    "start", 
+    "hut",
+    "ball",
+    "sport",
+    "rat"
 ]
 
 masc_prefixes = ["kn", "schwa"]
@@ -390,4 +394,156 @@ fem_suffixes = [
     "ung",
     "ur",
     "ür",
+    # composite noun endings
+    "tat"
+]
+
+# NEUTER
+
+neut_classes = [
+    # higher-level or first-order categories or collections of things
+    "aggregation",
+    "group",
+    "accumulation",
+    "grouping",
+    "assemblage",
+    "collection",
+    "whole",
+    "abstraction",
+    "entity",
+    # letters of the alphabet
+    "written symbol",
+    "symbol",
+    "graphic symbol",
+    "letter",
+    "sign",
+    "character",
+    "grapheme",
+    # languages
+    "language",
+    "natural language",
+    # grammatical terms and POS
+    "syntactic category",
+    "linguistic unit",
+    "word class",
+    "part of speech",
+    "grammatical category",
+    # colors
+    "color",
+    "colour",
+    # human and animal babies
+    "kid",
+    "child",
+    "progeny",
+    "offspring",
+    "young",
+    # pieces and particles
+    "relation",
+    "part",
+    "fraction",
+    "percentage",
+    "portion",
+    "component",
+    "constituent",
+    "element"
+    # elements of the Periodic Table
+    "chemical element",
+    # types of metals
+    "metal"
+    # materials
+    "material",
+    "substance",
+    "matter",
+    # units of measurement
+    "potential unit",
+    "definite quantity",
+    "unit of measurement",
+    "amount",
+    "quantity",
+    "measure",
+    "unit"
+    # music settings and instruments
+    "performance",
+    "musical group",
+    "musical organization",
+    "music",
+    "musical instrument",
+    # fractions
+    "fraction",
+    # books, paper, writing
+    "writing",
+    "paper",
+    # sport and games
+    "exercise",
+    "physical exertion",
+    "exercising",
+    "workout",
+    "exertion",
+    "game",
+    "sport",
+    # Mecicine
+    "drug",
+    "medicine",
+    "medicament"    
+]
+
+neut_category_dict = {
+
+}
+
+neut_suffixes = [
+    "en", # takes care of the gerunds
+    "ien",
+    "land",
+    "reich",
+    "stan",
+    "chen",
+    "lein",
+    "le",
+    "erl",
+    "el",
+    "li",
+    "aar",
+    "är",
+    "al",
+    "at",
+    "bot",
+    "eil",
+    "em",
+    "ett",
+    "euer",
+    "fon",
+    "phon",
+    "gramm",
+    "horn",
+    "ial",
+    "iel",
+    "ier",
+    "ing",
+    "ip",
+    "iv",
+    "ld",
+    "ma",
+    "ment",
+    "nis",
+    "ol",
+    "om",
+    "ym",
+    "skop",
+    "tum",
+    "um",
+    "werk",
+    "yl",
+    "zept",
+    "zeug"
+    # composite noun endings
+    "wasser", 
+    "feuer", 
+    "buch", 
+    "word",
+    "mittel"
+]
+
+neut_prefixes = [
+    "ge"
 ]
