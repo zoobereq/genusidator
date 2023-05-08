@@ -70,24 +70,26 @@ masc_suffixes = [
     "ug",
     "und",
     "us",
-    "wart"
-    "x",
+    "wart" "x",
     # composite noun endings
-    "staat", 
-    "markt", 
-    "saft", 
-    "wert", 
-    "test", 
-    "draht", 
-    "bart", 
-    "start", 
+    "staat",
+    "markt",
+    "saft",
+    "wert",
+    "test",
+    "draht",
+    "bart",
+    "start",
     "hut",
     "ball",
     "sport",
-    "rat"
+    "rat",
 ]
 
-masc_prefixes = ["kn", "schwa"]
+masc_prefixes = [
+    "Kn", 
+    "Schwa"
+]
 
 # FEMININE
 
@@ -395,7 +397,7 @@ fem_suffixes = [
     "ur",
     "ür",
     # composite noun endings
-    "tat"
+    "tat",
 ]
 
 # NEUTER
@@ -484,15 +486,85 @@ neut_classes = [
     # Mecicine
     "drug",
     "medicine",
-    "medicament"    
+    "medicament",
 ]
 
 neut_category_dict = {
-
+    "higher-level or first-order categories or collections of things": [
+        "aggregation",
+        "group",
+        "accumulation",
+        "grouping",
+        "assemblage",
+        "collection",
+        "whole",
+        "abstraction",
+        "entity",
+    ],
+    "letters of the alphabet": [
+        "written symbol",
+        "symbol",
+        "graphic symbol",
+        "letter",
+        "sign",
+        "character",
+        "grapheme",
+    ],
+    "languages": ["language", "natural language"],
+    "grammatical terms and POS": [
+        "syntactic category",
+        "linguistic unit",
+        "word class",
+        "part of speech",
+        "grammatical category",
+    ],
+    "colors": ["color", "colour"],
+    "human and animal babies": ["kid", "child", "progeny", "offspring", "young"],
+    "pieces and particles": [
+        "relation",
+        "part",
+        "fraction",
+        "percentage",
+        "portion",
+        "component",
+        "constituent",
+        "element",
+    ],
+    "elements of the Periodic Table": ["chemical element"],
+    "types of metals": ["metal"],
+    "materials": ["material", "substance", "matter"],
+    "units of measurement": [
+        "potential unit",
+        "definite quantity",
+        "unit of measurement",
+        "amount",
+        "quantity",
+        "measure",
+        "unit",
+    ],
+    "music settings and instruments": [
+        "performance",
+        "musical group",
+        "musical organization",
+        "music",
+        "musical instrument",
+    ],
+    "fractions": ["fraction"],
+    "books, paper, writing": ["writing", "paper"],
+    "sport and games": [
+        "exercise",
+        "physical exertion",
+        "exercising",
+        "workout",
+        "exertion",
+        "game",
+        "sport",
+    ],
+    "Medicine": ["drug", "medicine", "medicament"],
 }
 
 neut_suffixes = [
-    "en", # takes care of the gerunds
+    "en",  # takes care of the gerunds
     "ien",
     "land",
     "reich",
@@ -537,13 +609,11 @@ neut_suffixes = [
     "zept",
     "zeug"
     # composite noun endings
-    "wasser", 
-    "feuer", 
-    "buch", 
+    "wasser",
+    "feuer",
+    "buch",
     "word",
-    "mittel"
+    "mittel",
 ]
 
-neut_prefixes = [
-    "ge"
-]
+neut_prefixes = ["Ge"]
