@@ -5,6 +5,7 @@
 from german_compound_splitter import comp_split
 
 
-def parser(noun: str, ahocs) -> list:
+def compound_base(noun: str, ahocs) -> list:
+    """returns the base noun of the parsed compound"""
     parsed = comp_split.dissect(noun, ahocs, make_singular=True)
-    return parsed
+    return parsed[-1]
