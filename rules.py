@@ -273,6 +273,14 @@ masc_category_dict = {
     "masculine persons": ["male"],
 }
 
+"""
+Due to the lack of synsets, the following typically masculine semantic categories were unaccounted for:
+- names of rivers outside of Central Europe
+- elongated shapes
+- names of car brands
+- names of trains
+"""
+
 masc_suffixes = [
     "aal",
     "ag",
@@ -593,6 +601,17 @@ fem_category_dict = {
     "female persons": ["female", "woman", "female person"],
 }
 
+"""
+Due to the lack of synsets, the following typically feminine semantic categories were unaccounted for:
+- flat shapes
+- sharp shapes
+- pincer shapes
+- most rivers in Central Europe
+- hunting and things related to hunting
+- temperature (no synsets for hot and cold things)
+- motorcycle brands
+"""
+
 fem_suffixes = [
     "a",
     "acht",
@@ -800,6 +819,15 @@ neut_category_dict = {
     ],
     "Medicine": ["drug", "medicine", "medicament"],
 }
+
+"""
+Due to the lack of synsets, the following typically neuter semantic categories were unaccounted for:
+- nouns derived from adjectives
+- names of continents, countries, regions, cities, and valleys
+- types of grass
+- types of detergents
+- names of hotels, cafes, clubs, theaters, and cinemas
+"""
 
 neut_suffixes = [
     "en",  # takes care of the gerunds
