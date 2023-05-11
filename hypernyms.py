@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 """A function generating a noun-restricted taxonomy of hypernyms for the input string"""
 
+import warnings
+
 from nltk.corpus import wordnet as wn
+
+warnings.filterwarnings("ignore")  # discards warnings about redundant hypernym searches
 
 
 def taxonomy(word: str) -> list:
