@@ -316,7 +316,8 @@ masc_suffixes = [
     "ug",
     "und",
     "us",
-    "wart" "x",
+    "wart",
+    "x",
     # composite noun endings
     "staat",
     "markt",
