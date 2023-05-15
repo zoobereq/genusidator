@@ -18,7 +18,7 @@ def taxonomy(word: str) -> list:
             hypernym_list = []
             hyper = (
                 lambda s: s.hypernyms()
-            )  # function to iterate up the hypernym taxonomy
+            )  # a function to iterate up the hypernym taxonomy
             if (
                 list(synset.closure(hyper, depth=1)) == synset.hypernyms()
             ):  # validates closure over the hypernym hierarchy
