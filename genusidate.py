@@ -12,13 +12,12 @@ from der import masc_evaluate
 from die import fem_evaluate
 from hypernyms import taxonomy
 
-"""load a dictionary object for morphological parsing. Any dictionary with one item per line will do.
+"""load a dictionary object for morphological parsing. Any dictionary with one item per line will do. 
 The present implementation employs Free German Dictionary by Jan Schreiber (https://sourceforge.net/projects/germandict/files/latest/download).
-Note: the Free German Dictionary needs to be saved as UTF8 and with Unix/Linux line breaks.  Use the following bash script:
-iconv -f ISO_8859-15 german.dic > german_utf8_linux.dic
+An abridged file is included in the repo.
 """
 
-dictionary = "german_utf8_linux.dic"
+dictionary = "german_utf8_linux.dic" # UTF8 with Linux-style line breaks
 ahocs = comp_split.read_dictionary_from_file(
     dictionary
 )  # create an object for multi-pattern string search
@@ -33,17 +32,17 @@ def main(args: argparse.Namespace) -> None:
     doc = nlp(nouns)
     for noun in doc:
         gender = noun.morph.get("Gender")  # retrieve the grammatical gender
-        lemmatized = noun.lemma_  # run the noun throug the German lemmatizer
+        lemmatized = noun.lemma_  # retrieve the lemmatized form
         parsed_base = compound_base(
             lemmatized, ahocs
         )  # parse the compound noun and return its base
         translation = translator.translate(
             lemmatized, src="de", dest="en"
-        )  # translate from DE into EN to traverse WordNet
-        translated = translation.text.casefold()  # casefold the EN translation string
+        )  # translate from DE into EN
+        translated = translation.text.casefold()  # casefold the translated EN string
         hypernyms = taxonomy(
             translated
-        )  # generate all possible hypernyms across all available synsets at each taxonomical level
+        )  # generate all possible hypernyms across all available synsets at each taxonomical level all the way to the root
 
         print(f"Most probable English translation: '{translated}'")
 
