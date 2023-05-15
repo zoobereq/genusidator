@@ -19,10 +19,11 @@ Genusidator employs the following technologies:
 
 #### Installation
 Installation is easy with `pip` and the built-in `git` package installation protocol:
+
 `pip install git+https://github.com/zoobereq/genusidator`
 
 #### Evaluation
-The evaluation is forthcoming
+The evaluation is forthcoming.
 
 #### References
 The project was inspired by _Der, Die, Das: The Secrets of German Gender_ by Constantin Vayenas (2019)
