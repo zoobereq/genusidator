@@ -32,7 +32,7 @@ def main(args: argparse.Namespace) -> None:
     nouns = args.input
     doc = nlp(nouns)
     for noun in doc:
-        gender = noun.morph.get("Gender")  # retrieve the correct grammatical gender
+        gender = noun.morph.get("Gender")  # retrieve the grammatical gender
         lemmatized = noun.lemma_  # run the noun throug the German lemmatizer
         parsed_base = compound_base(
             lemmatized, ahocs
@@ -43,7 +43,7 @@ def main(args: argparse.Namespace) -> None:
         translated = translation.text.casefold()  # casefold the EN translation string
         hypernyms = taxonomy(
             translated
-        )  # generate all possible hypernyms across all available synsets
+        )  # generate all possible hypernyms across all available synsets at each taxonomical level
 
         print(f"Most probable English translation: '{translated}'")
 
