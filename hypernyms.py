@@ -12,7 +12,7 @@ def taxonomy(word: str) -> list:
     all_hypernyms = []
     if wn.synsets(
         word, pos=wn.NOUN
-    ):  # checks if there are any synsets to begin with. Proper nouns don't have synsets.
+    ):  # checks if there are any synsets to begin with.
         synsets = wn.synsets(word, pos=wn.NOUN)
         for synset in synsets:
             hypernym_list = []
