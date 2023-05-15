@@ -12,8 +12,14 @@ from der import masc_evaluate
 from die import fem_evaluate
 from hypernyms import taxonomy
 
+'''load a dictionary object for morphological parsing. Any dictionary with one item per line will do.
+The present implementation employs Free German Dictionary by Jan Schreiber (https://sourceforge.net/projects/germandict/files/latest/download).
+Note: the Free German Dictionary needs to be saved as UTF8 and with Unix/Linux line breaks.  Use the following bash script:
+>> iconv -f ISO_8859-15 german.dic > german_utf8_linux.dic
+'''
+
 dictionary = (
-    "german_utf8_linux.dic"  # load a dictionary object for morphological parsing
+    "german_utf8_linux.dic"  
 )
 ahocs = comp_split.read_dictionary_from_file(
     dictionary
