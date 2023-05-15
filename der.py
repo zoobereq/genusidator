@@ -55,7 +55,7 @@ def masc_syllables(token: str) -> bool:
 
 
 def masc_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
-    """the fucntion takes the noun and a set of hypernyms generated over all nominal synsets and determines if any of the hypernyms are affiliated with the masculine noun class.  It then performs simple morphological analysis by checking if the noun contains the prefixes and suffixes associated with the masculine gender."""
+    """the fucntion takes the noun and a set of hypernyms generated over all noun synsets and determines if any of the hypernyms are affiliated with the masculine noun class.  It then performs simple morphological analysis by checking if the noun contains the prefixes and suffixes associated with the masculine gender."""
     masc_flag = False
     print(f"The noun '{lemmatized}' is masculine.")
     # check the semantic taxonomy
@@ -116,7 +116,7 @@ def masc_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
         )
 
     # check if monosyllabic
-    # but first replace the umlauts and the 'ß' with their alternative transcriptions.  The EN syllable estimator doesn't work well with DE chars
+    # but first replace the umlauts and the 'ß' with their alternative transcriptions.  The EN syllable estimator doesn't recognize DE chars.
     no_umlauts = (
         lemmatized.replace("ä", "ae")
         .replace("ö", "oe")

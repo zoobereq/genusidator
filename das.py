@@ -47,7 +47,7 @@ def neut_rule2(token: str) -> list:
 
 
 def neut_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
-    """the fucntion takes the noun and a set of hypernyms generated over all nominal synsets and determines if any of the hypernyms are affiliated with the neuter noun class.  It then performs simple morphological analysis by checking if the noun contains the prefixes and suffixes associated with the neuter gender."""
+    """the fucntion takes a noun and a set of hypernyms generated over all noun synsets and determines if any of the hypernyms are affiliated with the neuter noun class.  It then performs simple morphological analysis by checking if the noun contains the prefixes and suffixes associated with the neuter gender."""
     neut_flag = False
     print(f"The noun '{lemmatized}' is neuter.")
     # check the semantic taxonomy

@@ -42,7 +42,7 @@ def fem_rule2(token: str) -> list:
 
 
 def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
-    """the fucntion takes the noun and a set of hypernyms generated over all nominal synsets and determines if any of the hypernyms are affiliated with the feminine noun class.  It then performs simple morphological analysis by checking if the noun contains the prefixes and suffixes associated with the feminine gender."""
+    """the fucntion takes the noun and a set of hypernyms generated over all noun synsets and determines if any of the hypernyms are affiliated with the feminine noun class.  It then performs simple morphological analysis by checking if the noun contains the prefixes and suffixes associated with the feminine gender."""
     fem_flag = False
     print(f"The noun '{lemmatized}' is feminine.")
     # check the semantic taxonomy
