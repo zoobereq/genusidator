@@ -91,7 +91,7 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
         else:
             print(f"Couldn't parse '{lemmatized}'.")
     elif hypernyms is None:
-        print(f"Unable to generate a semantic taxonomy for '{lemmatized}'.")
+        print(f"Couldn't generate a semantic taxonomy for '{lemmatized}'.")
 
     # check the morphology
     morphological = fem_rule2(lemmatized)
