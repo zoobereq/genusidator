@@ -87,7 +87,7 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
                         f"Couldn't find any semantic categories for '{lemmatized}'. There don't seem to be any predomiantly feminine semantic categories to which the base noun '{parsed_base}' blelongs."
                     )
             else:
-                print(f"Couldn't generate any semantic categories for '{translated_base}'.")        
+                print(f"Couldn't generate any semantic categories for '{parsed_base}'.")        
         else:
             print(f"Couldn't parse '{lemmatized}'.")
     elif hypernyms is None:
