@@ -113,7 +113,7 @@ def neut_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
     # check if the word is borrowed. Foreign borrowings are predominantly neuter
     if detect(lemmatized) != "de":
         print(
-            f"The word '{lemmatized}' is likely a borrowing from another langauge.  Imported words tend to be neuter"
+            f"The word '{lemmatized}' could be a borrowing from another langauge.  Imported words tend to be neuter"
         )
         neut_flag = True
 
