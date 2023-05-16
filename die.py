@@ -71,20 +71,23 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
             base_hypernyms = taxonomy(
                 translated_base
             )  # generate all possible hypernyms
-            base_semantic_general, base_semantic_granular = fem_rule1(base_hypernyms)
-            if base_semantic_granular:
-                print(f"Couldn't find any semantic categories for '{lemmatized}'.")
-                print(
-                    f"The base noun '{parsed_base}' belongs to the following predominantly feminine semantic categories: {', '.join(base_semantic_granular)}"
-                )
-                print(
-                    f"The above classification can be expressed in terms of the following general semantic categories: {', '.join(base_semantic_general)}"
-                )
-                fem_flag = True
+            if base_hypernyms:
+                base_semantic_general, base_semantic_granular = fem_rule1(base_hypernyms)
+                if base_semantic_granular:
+                    print(f"Couldn't find any semantic categories for '{lemmatized}'.")
+                    print(
+                        f"The base noun '{parsed_base}' belongs to the following predominantly feminine semantic categories: {', '.join(base_semantic_granular)}"
+                    )
+                    print(
+                        f"The above classification can be expressed in terms of the following general semantic categories: {', '.join(base_semantic_general)}"
+                    )
+                    fem_flag = True
+                else:
+                    print(
+                        f"Couldn't find any semantic categories for '{lemmatized}'. There don't seem to be any predomiantly feminine semantic categories to which the base noun '{parsed_base}' blelongs."
+                    )
             else:
-                print(
-                    f"Couldn't find any semantic categories for '{lemmatized}'. There don't seem to be any predomiantly feminine semantic categories to which the base noun '{parsed_base}' blelongs."
-                )
+                print(f"Couldn't generate any semantic categories for '{translated_base}'.")        
         else:
             print(f"Couldn't parse '{lemmatized}'.")
     elif hypernyms is None:
