@@ -96,7 +96,7 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
         print(f"'{lemmatized}' has the following feminine base noun: '{parsed_base}'.")
     if morphological:
         print(
-            f"The noun has the following feminine suffixes: {', '.join(morphological)}"
+            f"The noun has the following feminine suffixes: {morphological}"
         )
         fem_flag = True
     else:
