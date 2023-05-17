@@ -20,12 +20,6 @@ Genusidator employs the following technologies:
 - Foreign borrowings are detected with the [langdetect](https://pypi.org/project/langdetect/) package.
 
 
-#### Installation
-Installation is easy with `pip` and the built-in `git` package installation protocol:
-
-`pip install git+https://github.com/zoobereq/genusidator`
-
-
 #### Evaluation
 The evaluation is forthcoming.
 
