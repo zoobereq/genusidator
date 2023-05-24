@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 import argparse
+import os
 
+import deepl
 import spacy
 from german_compound_splitter import comp_split
-from googletrans import Translator
 
 from compound_parser import compound_base
 from das import neut_evaluate
@@ -17,11 +18,15 @@ The present implementation employs Free German Dictionary by Jan Schreiber (http
 An abridged file is included in the repo.
 """
 
-dictionary = "german_utf8_linux.dic" # UTF8 with Linux-style line breaks
+os.environ[
+    "TOKENIZERS_PARALLELISM"
+] = "false"  # handles the warning displayed when multiprocessing is initiated
+dictionary = "german_utf8_linux.dic"  # UTF8 with Linux-style line breaks
 ahocs = comp_split.read_dictionary_from_file(
     dictionary
 )  # create an object for multi-pattern string search
-translator = Translator()
+license_key = "#"  # replace with your own DeepL licence key
+deepl_translator = deepl.Translator(license_key)
 nlp = spacy.load(
     "de_dep_news_trf"
 )  # use a transformer pipeline for lemmatizing and noun class extraction
@@ -36,8 +41,8 @@ def main(args: argparse.Namespace) -> None:
         parsed_base = compound_base(
             lemmatized, ahocs
         )  # parse the compound noun and return its base
-        translation = translator.translate(
-            lemmatized, src="de", dest="en"
+        translation = deepl_translator.translate_text(
+            lemmatized, source_lang="DE", target_lang="EN-US"
         )  # translate from DE into EN
         translated = translation.text.casefold()  # casefold the translated EN string
         hypernyms = taxonomy(
