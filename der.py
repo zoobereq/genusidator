@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 """A module applying semantic, morphological, and phonological criteria to explain the masculine gender assignment"""
 
+import deepl
 import syllables
-from googletrans import Translator
 
 from hypernyms import taxonomy
-from rules import (masc_category_dict, masc_classes, masc_prefixes,
-                   masc_suffixes)
+from rules import masc_category_dict, masc_classes, masc_prefixes, masc_suffixes
 
-translator = Translator()
+license_key = "#"  # replace with your own DeepL licence key
+deepl_translator = deepl.Translator(license_key)
 
 
 def masc_rule1(hypernyms: list) -> list:
@@ -75,15 +75,19 @@ def masc_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
             )
     elif (
         not hypernyms
-    ):  # if the word returns no hypernyms, parse it and repeat the proces for the base noun
-        if parsed_base:
-            parsed_translation = translator.translate(parsed_base, src="de", dest="en")
+    ):  # if the word returns no hypernyms, see if its base noun returns them
+        if parsed_base:  # checks if the parser returns a base in the first place
+            parsed_translation = deepl_translator.translate_text(
+                parsed_base, source_lang="DE", target_lang="EN-US"
+            )
             translated_base = parsed_translation.text.casefold()
             base_hypernyms = taxonomy(
                 translated_base
             )  # generate all possible hypernyms
             if base_hypernyms:
-                base_semantic_general, base_semantic_granular = masc_rule1(base_hypernyms)
+                base_semantic_general, base_semantic_granular = masc_rule1(
+                    base_hypernyms
+                )
                 if base_semantic_granular:
                     print(f"Couldn't find any semantic categories for '{lemmatized}'.")
                     print(

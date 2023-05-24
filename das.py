@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 """A module applying semantic, morphological, and phonological criteria to explain the neuter gender assignment"""
 
-from googletrans import Translator
+import deepl
 from langdetect import detect
 
 from hypernyms import taxonomy
-from rules import (neut_category_dict, neut_classes, neut_prefixes,
-                   neut_suffixes)
+from rules import neut_category_dict, neut_classes, neut_prefixes, neut_suffixes
 
-translator = Translator()
+license_key = "#"  # replace with your own DeepL licence key
+deepl_translator = deepl.Translator(license_key)
 
 
 def neut_rule1(hypernyms: list) -> set:
@@ -69,15 +69,19 @@ def neut_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
             )
     elif (
         not hypernyms
-    ):  # if the word returns no hypernyms, see if it's parsed base returns them
+    ):  # if the word returns no hypernyms, see if its parsed base returns them
         if parsed_base:  # check if the parser returned a base in the first place
-            parsed_translation = translator.translate(parsed_base, src="de", dest="en")
+            parsed_translation = deepl_translator.translate_text(
+                parsed_base, source_lang="DE", target_lang="EN-US"
+            )
             translated_base = parsed_translation.text.casefold()
             base_hypernyms = taxonomy(
                 translated_base
             )  # generate all possible hypernyms
             if base_hypernyms:
-                base_semantic_general, base_semantic_granular = neut_rule1(base_hypernyms)
+                base_semantic_general, base_semantic_granular = neut_rule1(
+                    base_hypernyms
+                )
                 if base_semantic_granular:
                     print(f"Couldn't find any semantic categories for '{lemmatized}'.")
                     print(
@@ -92,7 +96,7 @@ def neut_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
                         f"Couldn't find any semantic categories for '{lemmatized}'. There don't seem to be any predomiantly neuter semantic categories to which the base noun '{parsed_base}' blelongs."
                     )
             else:
-                print(f"Couldn't generate any semantic categories for '{parsed_base}'.") 
+                print(f"Couldn't generate any semantic categories for '{parsed_base}'.")
         else:
             print(f"Couldn't parse '{lemmatized}'.")
     elif hypernyms is None:

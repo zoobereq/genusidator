@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 """A module applying semantic, morphological, and phonological criteria to explain the feminine gender assignment"""
 
-from googletrans import Translator
+
+import deepl
 
 from hypernyms import taxonomy
 from rules import fem_category_dict, fem_classes, fem_suffixes
 
-translator = Translator()
+license_key = "#"  # replace with your own DeepL licence key
+deepl_translator = deepl.Translator(license_key)
 
 
 def fem_rule1(hypernyms: list) -> set:
@@ -66,13 +68,17 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
         not hypernyms
     ):  # if the word returns no hypernyms, see if its parsed base returns them
         if parsed_base:  # checks if the parser returns a base in the first place
-            parsed_translation = translator.translate(parsed_base, src="de", dest="en")
+            parsed_translation = deepl_translator.translate_text(
+                parsed_base, source_lang="DE", target_lang="EN-US"
+            )
             translated_base = parsed_translation.text.casefold()
             base_hypernyms = taxonomy(
                 translated_base
             )  # generate all possible hypernyms
             if base_hypernyms:
-                base_semantic_general, base_semantic_granular = fem_rule1(base_hypernyms)
+                base_semantic_general, base_semantic_granular = fem_rule1(
+                    base_hypernyms
+                )
                 if base_semantic_granular:
                     print(f"Couldn't find any semantic categories for '{lemmatized}'.")
                     print(
@@ -87,7 +93,7 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
                         f"Couldn't find any semantic categories for '{lemmatized}'. There don't seem to be any predomiantly feminine semantic categories to which the base noun '{parsed_base}' blelongs."
                     )
             else:
-                print(f"Couldn't generate any semantic categories for '{parsed_base}'.")        
+                print(f"Couldn't generate any semantic categories for '{parsed_base}'.")
         else:
             print(f"Couldn't parse '{lemmatized}'.")
     elif hypernyms is None:
@@ -98,9 +104,7 @@ def fem_evaluate(lemmatized: str, hypernyms: list, parsed_base: str) -> None:
     if parsed_base:
         print(f"'{lemmatized}' has the following feminine base noun: '{parsed_base}'.")
     if morphological:
-        print(
-            f"The noun has the following feminine suffixes: {morphological}"
-        )
+        print(f"The noun has the following feminine suffixes: {morphological}")
         fem_flag = True
     else:
         print(
