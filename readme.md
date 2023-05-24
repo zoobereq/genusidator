@@ -13,7 +13,7 @@ This program aims to address the above limitation by automatically generating th
 #### Technology
 Genusidator employs the following technologies:
 - [spaCy German transformer pipeline](https://github.com/explosion/spacy-models/releases/tag/de_dep_news_trf-3.5.0) is used for grammatical class detection and lemmatization.
-- [Google Translate API](https://pypi.org/project/googletrans/) 
+- [DeepL API](https://pypi.org/project/googletrans/) is used to output US-English translation. The translation both helps furnish semantic context and is required to generate a hypernm taxonomy. Make sure to supply your own DeepL API key, which can be obtained [here](https://www.deepl.com/pro-api?cta=header-pro-api). The earlier versions of this program implemented the Google Translate API, which proved much less reliable and accurate than DeepL.
 - [German Compound Noun Splitter](https://github.com/repodiac/german_compound_splitter) is used to split nominal composita and output the base noun. Note that a dictionary object is required for morphological parsing. Any dictionary with one item per line will do. The present implementation employs [Free German Dictionary](https://sourceforge.net/projects/germandict/files/latest/download) by Jan Schreiber. An abridged version of this resource is included in the repo.
 - NLTK and WordNet are used to generate the hypernym taxonomy for each noun
 - Monosyllabicity is verified with [Syllables](https://pypi.org/project/syllables/), a package to estimate the number of syllables in English words. It works well detecting monosyllabic German words, however the string needs to be first stransformed to remove the Umlauts and the Eszett.
