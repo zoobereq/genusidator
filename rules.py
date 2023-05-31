@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Semantic and morphological rules governing gender class assignment for German nouns"""
 
 # MASCULINE
@@ -148,23 +147,23 @@ masc_classes = [
 ]
 
 masc_category_dict = {
-    "animals": ["animal", "beast"],
-    "times of the day": [
+    "animals" : ["animal", "beast"],
+    "times of the day" : [
         "time period",
         "period of time",
         "time",
         "time of day" "period",
     ],
-    "days of the week": ["weekday", "civil day", "calendar day", "day of the week"],
-    "months": ["month", "Gregorian calendar month", "calendar month"],
-    "seasons": ["season", "time of year"],
-    "points on the compass": [
+    "days of the week" : ["weekday", "civil day", "calendar day", "day of the week"],
+    "months" : ["month", "Gregorian calendar month", "calendar month"],
+    "seasons" : ["season", "time of year"],
+    "points on the compass" : [
         "compass point",
         "cardinal compass point",
         "spatial relation",
         "geographical point",
     ],
-    "precipitation and wind": [
+    "precipitation and wind" : [
         "natural event",
         "weather condition",
         "precipitation",
@@ -177,7 +176,7 @@ masc_category_dict = {
         "storm",
         "natural phenomenon",
     ],
-    "celestial bodies": [
+    "celestial bodies" : [
         "minor planet",
         "celestial body",
         "planetoid",
@@ -185,7 +184,7 @@ masc_category_dict = {
         "planet",
         "satellite",
     ],
-    "types of soil, minerals and rock": [
+    "types of soil, minerals and rock" : [
         "jewel",
         "stone",
         "Earth's surface",
@@ -201,7 +200,7 @@ masc_category_dict = {
         "crystal",
         "mineral",
     ],
-    "dirt and waste": [
+    "dirt and waste" : [
         "waste",
         "dirt",
         "incautiousness",
@@ -217,7 +216,7 @@ masc_category_dict = {
         "uncleanness",
         "dirtiness",
     ],
-    "bodies of water": ["body of water", "water"],
+    "bodies of water" : ["body of water", "water"],
     "mountains and peaks": [
         "elevation",
         "mountain",
@@ -225,9 +224,9 @@ masc_category_dict = {
         "natural elevation",
         "formation",
     ],
-    "cloth and fabric": ["fabric", "cloth", "material", "textile"],
-    "types of fish": ["fish", "aquatic vertebrate"],
-    "plants, vegetables, salads, and spices": [
+    "cloth and fabric" : ["fabric", "cloth", "material", "textile"],
+    "types of fish" : ["fish", "aquatic vertebrate"],
+    "plants, vegetables, salads, and spices" : [
         "vegetable",
         "plant",
         "herb",
@@ -240,8 +239,8 @@ masc_category_dict = {
         "fungus",
         "cereal",
     ],
-    "coffee and tea": ["coffee", "tea"],
-    "alcoholic beverages": [
+    "coffee and tea" : ["coffee", "tea"],
+    "alcoholic beverages" : [
         "alcohol",
         "alcoholic beverage",
         "drink",
@@ -254,23 +253,23 @@ masc_category_dict = {
         "hard drink",
         "strong drink",
     ],
-    "equipment, instruments, tools": [
+    "equipment, instruments, tools" : [
         "instrumentality",
         "instrumentation",
         "device",
         "implement",
     ],
-    "cars": [
+    "cars" : [
         "wheeled vehicle",
         "self-propelled vehicle",
         "motortruck",
         "truck",
         "motor vehicle",
     ],
-    "currencies": ["monetary unit"],
-    "types of music": ["music genre", "musical genre", "music"],
-    "dance": ["dance", "dance music", "dancing"],
-    "masculine persons": ["male"],
+    "currencies" : ["monetary unit"],
+    "types of music" : ["music genre", "musical genre", "music"],
+    "dance" : ["dance", "dance music", "dancing"],
+    "masculine persons": ["male"]
 }
 
 """
@@ -333,7 +332,7 @@ masc_suffixes = [
     "hut",
     "ball",
     "sport",
-    "rat",
+    "rat"
 ]
 
 masc_prefixes = ["Kn", "Schwa"]
@@ -475,11 +474,11 @@ fem_classes = [
     # female persons
     "female",
     "woman",
-    "female person",
+    "female person"
 ]
 
 fem_category_dict = {
-    "numbers and mathematics": [
+    "numbers and mathematics" : [
         "measure",
         "number",
         "integer",
@@ -489,7 +488,7 @@ fem_category_dict = {
         "mathematics",
         "charge",
     ],
-    "time": [
+    "time" : [
         "time unit",
         "period",
         "time period",
@@ -497,7 +496,7 @@ fem_category_dict = {
         "point in time",
         "time",
     ],
-    "authority, power, and governance": [
+    "authority, power, and governance" : [
         "strength",
         "action",
         "causal agency",
@@ -508,7 +507,7 @@ fem_category_dict = {
         "governance",
         "authority",
     ],
-    "rules, permission, and limits": [
+    "rules, permission, and limits" : [
         "rule",
         "noesis",
         "control",
@@ -520,7 +519,7 @@ fem_category_dict = {
         "edge",
         "demarcation",
     ],
-    "knowledge and wisdom": [
+    "knowledge and wisdom" : [
         "idea",
         "content",
         "cognitive content",
@@ -533,7 +532,7 @@ fem_category_dict = {
         "judiciousness",
         "judgment",
     ],
-    "communication": [
+    "communication" : [
         "connection",
         "communication",
         "relation",
@@ -543,8 +542,8 @@ fem_category_dict = {
         "utterance",
         "speech act",
     ],
-    "musical instruments": ["instrument", "musical instrument"],
-    "form and shape": [
+    "musical instruments" : ["instrument", "musical instrument"],
+    "form and shape" : [
         "structure",
         "spatial property",
         "visual aspect",
@@ -554,14 +553,14 @@ fem_category_dict = {
         "ridge",
         "surface",
     ],
-    "hollow shapes": [
+    "hollow shapes" : [
         "container",
         "containerful",
         "plumbing fixture",
         "cave",
         "cylinder",
     ],
-    "food": [
+    "food" : [
         "fare",
         "food",
         "fasting",
@@ -573,23 +572,23 @@ fem_category_dict = {
         "food product",
         "nutriment",
     ],
-    "gestures and motions": ["motion", "movement", "move", "attitude"],
-    "sailing craft and water craft": ["watercraft"],
-    "temperature": ["temperature", "somatic sensation", "physiological condition"],
-    "aircraft": [
+    "gestures and motions" : ["motion", "movement", "move", "attitude"],
+    "sailing craft and water craft" : ["watercraft"],
+    "temperature" : ["temperature", "somatic sensation", "physiological condition"],
+    "aircraft" : [
         "heavier-than-air craft",
         "aircraft",
         "aeroplane",
         "plane",
         "airplane",
     ],
-    "small birds": ["bird"],
-    "insects": ["insect", "invertebrate"],
-    "trees": ["woody plant", "tree"],
-    "flowers": ["flowering tree", "flower", "flower bud"],
-    "fruit": ["edible fruit", "fruit"],
-    "typeface": ["font", "typeface"],
-    "software": [
+    "small birds" : ["bird"],
+    "insects" : ["insect", "invertebrate"],
+    "trees" : ["woody plant", "tree"],
+    "flowers" : ["flowering tree", "flower", "flower bud"],
+    "fruit" : ["edible fruit", "fruit"],
+    "typeface" : ["font", "typeface"],
+    "software" : [
         "computer code",
         "computer",
         "code",
@@ -599,7 +598,7 @@ fem_category_dict = {
         "program",
         "software",
     ],
-    "female persons": ["female", "woman", "female person"],
+    "female persons" : ["female", "woman", "female person"],
 }
 
 """
@@ -655,7 +654,7 @@ fem_suffixes = [
     "ur",
     "ür",
     # composite noun endings
-    "tat",
+    "tat"
 ]
 
 # NEUTER
@@ -705,11 +704,11 @@ neut_classes = [
     "portion",
     "component",
     "constituent",
-    "element"
+    "element",
     # elements of the Periodic Table
     "chemical element",
     # types of metals
-    "metal"
+    "metal",
     # materials
     "material",
     "substance",
@@ -721,7 +720,7 @@ neut_classes = [
     "amount",
     "quantity",
     "measure",
-    "unit"
+    "unit",
     # music settings and instruments
     "performance",
     "musical group",
@@ -744,11 +743,11 @@ neut_classes = [
     # Mecicine
     "drug",
     "medicine",
-    "medicament",
+    "medicament"
 ]
 
 neut_category_dict = {
-    "higher-level or first-order categories or collections of things": [
+    "higher-level or first-order categories or collections of things" : [
         "aggregation",
         "group",
         "accumulation",
@@ -759,7 +758,7 @@ neut_category_dict = {
         "abstraction",
         "entity",
     ],
-    "letters of the alphabet": [
+    "letters of the alphabet" : [
         "written symbol",
         "symbol",
         "graphic symbol",
@@ -768,17 +767,17 @@ neut_category_dict = {
         "character",
         "grapheme",
     ],
-    "languages": ["language", "natural language"],
-    "grammatical terms and POS": [
+    "languages" : ["language", "natural language"],
+    "grammatical terms and POS" : [
         "syntactic category",
         "linguistic unit",
         "word class",
         "part of speech",
         "grammatical category",
     ],
-    "colors": ["color", "colour"],
-    "human and animal babies": ["kid", "child", "progeny", "offspring", "young"],
-    "pieces and particles": [
+    "colors" : ["color", "colour"],
+    "human and animal babies" : ["kid", "child", "progeny", "offspring", "young"],
+    "pieces and particles" : [
         "relation",
         "part",
         "fraction",
@@ -788,10 +787,10 @@ neut_category_dict = {
         "constituent",
         "element",
     ],
-    "elements of the Periodic Table": ["chemical element"],
-    "types of metals": ["metal"],
-    "materials": ["material", "substance", "matter"],
-    "units of measurement": [
+    "elements of the Periodic Table" : ["chemical element"],
+    "types of metals" : ["metal"],
+    "materials" : ["material", "substance", "matter"],
+    "units of measurement" : [
         "potential unit",
         "definite quantity",
         "unit of measurement",
@@ -800,16 +799,16 @@ neut_category_dict = {
         "measure",
         "unit",
     ],
-    "music settings and instruments": [
+    "music settings and instruments" : [
         "performance",
         "musical group",
         "musical organization",
         "music",
         "musical instrument",
     ],
-    "fractions": ["fraction"],
-    "books, paper, writing": ["writing", "paper"],
-    "sport and games": [
+    "fractions" : ["fraction"],
+    "books, paper, writing" : ["writing", "paper"],
+    "sport and games" : [
         "exercise",
         "physical exertion",
         "exercising",
@@ -818,7 +817,7 @@ neut_category_dict = {
         "game",
         "sport",
     ],
-    "Medicine": ["drug", "medicine", "medicament"],
+    "Medicine" : ["drug", "medicine", "medicament"]
 }
 
 """
@@ -874,13 +873,13 @@ neut_suffixes = [
     "werk",
     "yl",
     "zept",
-    "zeug"
+    "zeug",
     # composite noun endings
     "wasser",
     "feuer",
     "buch",
     "word",
-    "mittel",
+    "mittel"
 ]
 
 neut_prefixes = ["Ge"]
