@@ -26,7 +26,7 @@ In order to evaluate the system a list of 102,444 German nouns was extracted fro
 - 36306 were feminine
 - 22153 were neuter
 
-Four feature sets were extracted (semantic, morphological, etymological, and syllabic/phonological) and employed in training a multinomial lgistic regression classifier
+Four feature sets were extracted (semantic, morphological, etymological, and syllabic/phonological) and employed in training a multinomial lgistic regression classifier.
 The baseline accuracy of the model is 0.396, which reflects the imbalanced ratio between the three genders. Below are the accuracy scores for each feature set, followed by the accuracy for all the features combined:
 
 - Semantic features:                0.419
